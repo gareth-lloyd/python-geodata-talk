@@ -1,3 +1,5 @@
-from django.contrib import admin
+from django.contrib.gis import admin
+from reporting.models import Report
 
-# Register your models here.
+
+admin.site.register(Report, admin.GeoModelAdmin)

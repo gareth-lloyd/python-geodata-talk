@@ -19,7 +19,8 @@ export class ReportingService {
   makeReport(report: Report) : Observable<Object> {
     report.doctorId = this.doctorId;
     report.doctorName = this.doctorName;
-    return this.http.post<Object>(this.url, report);
+    debugger;
+    return this.http.post<Object>(this.url, report.toJsonApiPayload());
   }
   signInDoctor(doctorId: string, doctorName: string): void {
     this.doctorId = doctorId;

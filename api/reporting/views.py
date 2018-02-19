@@ -1,8 +1,7 @@
 from django.shortcuts import render
 
-from django_filters import rest_framework
 from django.views.generic import TemplateView
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import ListCreateAPIView
 
 from reporting import (
     filters as reporting_filters, models as reporting_models,
@@ -13,5 +12,5 @@ class Home(TemplateView):
     template_name = 'reporting/home.html'
 
 
-class CreateReport(CreateAPIView):
+class CreateReport(ListCreateAPIView):
     serializer_class = reporting.ReportSerializer

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { UUID } from 'angular2-uuid';
 
 import { CurrentLocationService } from '../current-location.service';
 import { ReportingService } from '../reporting.service';
@@ -13,7 +14,6 @@ import { LOW_CONTRAST } from '../map-constants';
   styleUrls: ['./reporting.component.scss']
 })
 export class ReportingComponent implements OnInit {
-  styles = LOW_CONTRAST;
   report: Report = new Report();
   locationErrorMessage?: string = null;
 
@@ -22,7 +22,9 @@ export class ReportingComponent implements OnInit {
     private currentLocationService: CurrentLocationService,
     private router: Router,
     public snackBar: MatSnackBar
-  ) { }
+  ) {
+    this.report.patientId = UUID.UUID().slice(0, 16);
+  }
 
   ngOnInit() {
     this.currentLocationService.currentLocationSubject.subscribe(coords => {

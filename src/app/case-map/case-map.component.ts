@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./case-map.component.scss']
 })
 export class CaseMapComponent implements OnInit {
+  styles = LOW_CONTRAST;
 
   constructor() { }
 

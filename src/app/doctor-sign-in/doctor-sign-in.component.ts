@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UUID } from 'angular2-uuid';
 
 import { ReportingService } from '../reporting.service';
 
@@ -9,7 +10,7 @@ import { ReportingService } from '../reporting.service';
   styleUrls: ['./doctor-sign-in.component.scss']
 })
 export class DoctorSignInComponent {
-  doctorId: string;
+  doctorId: string = UUID.UUID().slice(0, 16);
   doctorName: string;
 
   constructor(

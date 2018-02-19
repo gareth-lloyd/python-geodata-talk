@@ -2,22 +2,18 @@
   "name": "redemption-client",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint"
+    "postinstall": "ng build --aot -prod --output-hashing=none"
   },
   "private": true,
   "dependencies": {
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/cli": "1.5.5",
     "@agm/core": "^1.0.0-beta.2",
     "@agm/snazzy-info-window": "^1.0.0-beta.2",
     "@angular/animations": "^5.1.0",
     "@angular/cdk": "^5.0.1",
+    "@angular/cli": "1.5.5",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.0.0",
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/http": "^5.0.0",
@@ -26,14 +22,15 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.6",
+    "@types/node": "~6.0.60",
+    "angular2-uuid": "^1.1.1",
     "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.4.1",
     "moment": "^2.19.4",
     "rxjs": "^5.5.2",
     "snazzy-info-window": "^1.1.0",
-    "zone.js": "^0.8.14",
     "typescript": "~2.4.2",
-    "@types/node": "~6.0.60"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/language-service": "^5.0.0",
@@ -51,8 +48,5 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0"
-  },
-  "scripts": {
-    "postinstall": "ng build --aot -prod --output-hashing=none"
   }
 }

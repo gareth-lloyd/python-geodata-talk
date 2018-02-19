@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class RoutesConfig(AppConfig):
-    name = 'routes'
+class ReportingConfig(AppConfig):
+    name = 'reporting'
