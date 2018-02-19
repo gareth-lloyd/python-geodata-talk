@@ -1,5 +1,19 @@
-<p>
-  case-map works!
-  <a routerLink="/reporting">Report another case</a>
+<h2>{{ numReports }} reports so far</h2>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="8" [styles]="styles">
+  <agm-marker *ngFor="let report of reports | async"
+              [latitude]="report.coords.latitude"
+              [longitude]="report.coords.longitude">
+    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <ng-template>
+        {{ report.patientName }}
+        has
+        {{ report.diagnosis }}
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+</agm-map>
+<hr>
 
-</p>
+<button mat-raised-button color="primary" routerLink="/reporting">
+  Report another case
+</button>

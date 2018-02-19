@@ -30,9 +30,22 @@ export class Report {
       diagnosis: this.diagnosis,
       notes: this.notes,
       location: {
-        latitude: this.coords.latitude,
-        longitude: this.coords.longitude
+        "type": "Point",
+        "coordinates": [this.coords.longitude, this.coords.latitude]
       }
     }
+  }
+
+  fromJsonApiPayload(payload:any) {
+    this.doctorId = payload.doctor_id;
+    this.doctorName = payload.doctor_name;
+    this.patientName = payload.patient_name;
+    this.patientName = payload.patient_name;
+    this.diagnosis = payload.diagnosis;
+    this.notes = payload.notes;
+    this.coords = new Coords();
+    this.coords.longitude = payload.location.coordinates[0];
+    this.coords.latitude = payload.location.coordinates[1];
+    return this;
   }
 }

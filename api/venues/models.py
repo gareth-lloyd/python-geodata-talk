@@ -25,7 +25,7 @@ class Venue(models.Model):
         )
         return cls.objects.get_or_create(
             foursquare_id=venue_response['id'],
-            defaults={
+            defaults=dict(
                 name=venue_response['name'],
                 location=location,
                 checkins_count=venue_response['stats']['checkinsCount'],
@@ -35,7 +35,7 @@ class Venue(models.Model):
                 formatted_address=(
                     venue_response['location'].get('formattedAddress')
                 )
-            }
+            )
         )
 
     def get_or_create_from_api(cls, venue_response):
@@ -66,8 +66,8 @@ class FoursquareCategory(models.Model):
 
 
 class VenueCategory(models.Model):
-    venue = models.ForeignKey(Venue)
-    category = models.ForeignKey(FoursquareCategory)
+    venue = models.ForeignKey(Venue, on_delete=models.PROTECT)
+    category = models.ForeignKey(FoursquareCategory, on_delete=models.PROTECT)
     is_primary = models.BooleanField()
 
     class Meta:

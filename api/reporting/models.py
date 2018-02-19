@@ -9,6 +9,7 @@ class Report(models.Model):
         ("cold", "Common cold"),
         ("hypochondria", "Hypochondria"),
     )
+    created = models.DateTimeField(auto_now_add=True)
     doctor_id = models.CharField(max_length=64)
     doctor_name = models.CharField(max_length=128)
     patient_id = models.CharField(max_length=64)
@@ -16,6 +17,7 @@ class Report(models.Model):
 
     diagnosis = models.CharField(max_length=32, choices=DIAGNOSIS_CHOICES )
     location = models.PointField()
+    notes = models.TextField(blank=True)
 
     def __str__(self):
         return "{} has {} at {}".format(

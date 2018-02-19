@@ -11,3 +11,25 @@
 
 @import './variables';
 @import './mixins';
+
+body {
+  background-color: #777;
+}
+.container {
+  background: white;
+  max-width: 500px;
+  min-height: 700px;
+  margin: 0 auto;
+  .header {
+    color: white;
+    background: $secondary;
+    padding: 0.5rem;
+  }
+  .body {
+    padding: 1rem;
+  }
+}
+mat-form-field {
+  width: 100%;
+  margin-bottom: .5rem;
+}

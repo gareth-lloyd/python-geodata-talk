@@ -6,7 +6,6 @@ import { UUID } from 'angular2-uuid';
 import { CurrentLocationService } from '../current-location.service';
 import { ReportingService } from '../reporting.service';
 import { Report } from '../report';
-import { LOW_CONTRAST } from '../map-constants';
 
 @Component({
   selector: 'app-reporting',
@@ -27,6 +26,9 @@ export class ReportingComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(!this.reportingService.doctorId) {
+      this.router.navigate([''])
+    }
     this.currentLocationService.currentLocationSubject.subscribe(coords => {
       this.report.coords = coords;
       this.locationErrorMessage = null;
