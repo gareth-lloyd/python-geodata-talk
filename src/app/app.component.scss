@@ -1,0 +1,26 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.fullscreen {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+agm-map {
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  max-width: 520px;
+  max-height: 100%;
+  background: white;
+  overflow: scroll;
+  top: 0px;
+  left: 0px;
+}
+mat-icon {
+  margin-right: 1rem;
+}

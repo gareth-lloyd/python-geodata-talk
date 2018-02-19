@@ -1,0 +1,19 @@
+<div class="form-container">
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Doctor ID" [(ngModel)]="doctorId"
+             name="doctorId" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Doctor name" [(ngModel)]="doctorName"
+             name="doctorName" required>
+    </mat-form-field>
+
+    <mat-action-row>
+      <button mat-raised-button color="primary"
+              (click)="submit()">
+        Start diagnosing
+      </button>
+    </mat-action-row>
+  </form>
+</div>
