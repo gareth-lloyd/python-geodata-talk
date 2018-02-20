@@ -18,7 +18,7 @@ EAST = -0.0795342546329
 WEST = -0.174670186257
 
 APPROX_100_M = 0.0005
-APPROX_500_M = 0.005
+APPROX_500_M = 0.0025
 
 HOSPITALS = {
     "National Hospital for Neurology and Neurosurgery":	(-0.1223623, 51.5222325),
@@ -34,10 +34,6 @@ OUTBREAK = (-0.136677, 51.513283)
 
 def random_diagnosis(weights=None):
     return random.choice(DIAGNOSES)
-
-
-def random_time_on_day(day):
-    return make_aware(datetime.combine(day, time(random.randint(2, 23))))
 
 
 def create_uniform_point_field(x1, y1, x2, y2, n):
@@ -61,48 +57,60 @@ def create_gaussian_point_cluster(x, y, sigma, n):
     ]
 
 
-def normal_day(day):
-    cases = random.randint(10, 20)
+def normal_day():
+    cases = random.randint(6, 12)
     points = create_uniform_point_field(
         WEST, NORTH, EAST, SOUTH, n=cases,
     )
     for hospital_coords in HOSPITALS.values():
-        cases = random.randint(10, 20)
+        cases = random.randint(10, 12)
         points.extend(create_gaussian_point_cluster(
             x=hospital_coords[0], y=hospital_coords[1],
             sigma=APPROX_100_M, n=cases
         ))
 
+    reports = []
     for coords in points:
-        report = Report.objects.create(
+        reports.append(Report(
             diagnosis=random_diagnosis(),
             doctor_name=names.get_full_name(),
             doctor_id=uuid1(),
             patient_name=names.get_full_name(),
             patient_id=uuid1(),
             location=geos.Point(*coords),
-        )
-        report.created = random_time_on_day(day)
-        report.save()
+        ))
+    Report.objects.bulk_create(reports)
 
 
-def outbreak(x, y, disease, min_n, max_n):
+def outbreak(x, y, disease, min_n, max_n, sigma):
     cases = random.randint(min_n, max_n)
-    points = create_gaussian_point_cluster(x, y, APPROX_500_M, cases)
+    points = create_gaussian_point_cluster(x, y, sigma, cases)
+    reports = []
     for coords in points:
-        report = Report.objects.create(
+        reports.append(Report(
             diagnosis=disease,
             doctor_name=names.get_full_name(),
             doctor_id=uuid1(),
             patient_name=names.get_full_name(),
             patient_id=uuid1(),
             location=geos.Point(*coords),
-        )
-        report.created = random_time_on_day(day)
-        report.save()
+        ))
+    Report.objects.bulk_create(reports)
 
 
-def day_1():
+def gather_reports_for_day_1():
     Report.objects.all().delete()
-    day = date(1857, 6, 1)
-    normal_day(day)
+    normal_day()
+
+
+def gather_reports_for_day_2():
+    Report.objects.all().delete()
+    normal_day()
+    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 5, 10, APPROX_500_M)
+
+
+def gather_reports_for_day_3():
+    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 80, 100, APPROX_500_M * 1.5)
+
+def gather_reports_for_day_28():
+    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 1000, 1000, APPROX_500_M * 5)
