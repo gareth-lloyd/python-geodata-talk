@@ -1,10 +1,10 @@
 # Putting Python on the map
 
----?image=images/heres-why-not.png&size=80%
+---?image=presentation/images/intro-title-card.png&size=100%
 
----?image=images/hey-why-not.png&size=60%
+---?image=presentation/images/hey-why-not.png&size=60%
 
----?image=images/scales.jpg&size=80%
+---?image=presentation/images/scales.jpg&size=80%
 
 ---
 ### Foreign key
@@ -14,16 +14,16 @@
 - Automatically indexed for performance
 - Effortless querying forward and backwards
 
-+++?image=images/referential_integrity_1.png&size=80%
++++?image=presentation/images/referential_integrity_1.png&size=80%
 ## Referential Integrity
 
-+++?image=images/cascade.png&size=80%
++++?image=presentation/images/cascade.png&size=80%
 ## Cascade
 
-+++?image=images/protect.png&size=80%
++++?image=presentation/images/protect.png&size=80%
 ## Protect
 
-+++?image=images/set_null.png&size=80%
++++?image=presentation/images/set_null.png&size=80%
 ## Set null
 
 ---
@@ -34,7 +34,7 @@
 - ~~Automatically indexed for performance~~
 - ~~Effortless querying forward and backwards~~
 
----?image=images/scarcely.png
+---?image=presentation/images/scarcely.png
 
 ---
 

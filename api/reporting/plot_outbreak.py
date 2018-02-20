@@ -18,14 +18,14 @@ def plot_outbreak():
     matplotlib.rcParams['figure.figsize'] = [16.0, 12.0]
 
     # Import London's rivers
-    rivers = geopandas.read_file('../data/london-rivers_shp/')
+    rivers = geopandas.read_file('../open-street-map-data/london-rivers_shp/')
 
     # Import London's roads
-    roads = geopandas.read_file('../data/london-roads_shp/')
+    roads = geopandas.read_file('../open-street-map-data/london-roads_shp/')
     # Filter the roads to just the most important ones
     mains = roads[roads['highway'].isin(('trunk', 'primary', 'secondary', 'tertiary'))]
 
-    medical = geopandas.read_file('../data/london-medical_shp/')
+    medical = geopandas.read_file('../open-street-map-data/london-medical_shp/')
     hospitals = medical[medical['amenity'] == 'hospital'].copy()
 
     # Create a polygone representing a zone around each hospital

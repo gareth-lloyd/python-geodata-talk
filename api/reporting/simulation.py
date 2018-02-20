@@ -106,7 +106,7 @@ def gather_reports_for_day_1():
 def gather_reports_for_day_2():
     Report.objects.all().delete()
     normal_day()
-    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 5, 10, APPROX_500_M)
+    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 10, 20, APPROX_500_M)
 
 
 def gather_reports_for_day_3():
