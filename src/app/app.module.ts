@@ -24,11 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { AnalysisComponent } from './analysis/analysis.component';
 import { CurrentLocationService } from './current-location.service';
-import { DateRangeComponent } from './date-range/date-range.component';
-import { FiltersComponent } from './filters/filters.component';
-import { LocationService } from './location-service';
 import { ReportingComponent } from './reporting/reporting.component';
 import { ReportingService } from './reporting.service';
 import { DoctorSignInComponent } from './doctor-sign-in/doctor-sign-in.component';
@@ -37,10 +33,7 @@ import { CaseMapComponent } from './case-map/case-map.component';
 
 @NgModule({
   declarations: [
-    AnalysisComponent,
     AppComponent,
-    FiltersComponent,
-    DateRangeComponent,
     ReportingComponent,
     DoctorSignInComponent,
     CaseMapComponent
@@ -75,7 +68,6 @@ import { CaseMapComponent } from './case-map/case-map.component';
     CurrentLocationService,
     ReportingService,
     ReportingComponent,
-    LocationService
   ],
   bootstrap: [AppComponent]
 })

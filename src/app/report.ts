@@ -5,10 +5,10 @@ export class Coords {
 export class Report {
   public diagnosisOptions = {
     cholera: "Cholera",
-    plague: "Plague",
     scarletfever: "Scarlet fever",
-    cold: "Common cold",
-    hypochondria: "Hypochondria"
+    typhoid: "Typhoid",
+    smallpox: "Smallpox",
+    rubella: "Rubella"
   };
   public diagnosisKeys = Object.keys(this.diagnosisOptions);
 

@@ -11,8 +11,8 @@ import { Report } from './report';
 @Injectable()
 export class ReportingService {
   private url: string = environment.server + '/api/reports/';
-  private doctorId: string;
-  private doctorName: string;
+  public doctorId: string;
+  public doctorName: string;
 
   constructor(private http: HttpClient) { }
 
