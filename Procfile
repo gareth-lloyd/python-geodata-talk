@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath=./api redemptionmap.wsgi
+web: gunicorn --pythonpath=./api pycon.wsgi

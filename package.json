@@ -1,5 +1,5 @@
 {
-  "name": "redemption-client",
+  "name": "geodata-talk",
   "version": "0.0.0",
   "scripts": {
     "postinstall": "ng build --aot -prod --output-hashing=none"
