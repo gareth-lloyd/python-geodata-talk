@@ -1,13 +1,19 @@
 from django.contrib.gis.db import models
+from reporting import geo_utils
 
 
 class Report(models.Model):
+    CHOLERA = "cholera"
+    SCARLET_FEVER = "scarletfever"
+    TYPHOID = "typhoid"
+    RUBELLA = "rubella"
+    SMALLPOX = "smallpox"
     DIAGNOSIS_CHOICES = (
-        ("cholera", "Cholera"),
-        ("plague", "Plague"),
-        ("scarletfever", "Scarlet fever"),
-        ("cold", "Common cold"),
-        ("hypochondria", "Hypochondria"),
+        (CHOLERA, "Cholera"),
+        (SCARLET_FEVER, "Scarlet fever"),
+        (TYPHOID, "Typhoid"),
+        (RUBELLA, "Rubella"),
+        (SMALLPOX, "Smallpox"),
     )
     created = models.DateTimeField(auto_now_add=True)
     doctor_id = models.CharField(max_length=64)
