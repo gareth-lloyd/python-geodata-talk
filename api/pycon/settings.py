@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
 
-    'venues',
-    'osm',
     'reporting',
 
     'django_extensions',
