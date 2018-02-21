@@ -49,4 +49,11 @@ There are [add-ons](https://github.com/djangonauts/django-rest-framework-gis) fo
 
 [Shapely](https://shapely.readthedocs.io/en/latest/) brings the spatial modelling power of [GEOS](https://trac.osgeo.org/geos) into Python, and powers a lot of GeoPandas functionality.
 
+## Geodata
+
+- HotOSM has an awesome tool for [downloading Open Street Map data](https://export.hotosm.org/en/v3/)
+- Humdata.org has a lot of [Namibian data sets](https://data.humdata.org/dataset/hotosm_nam_points_of_interest)
+- [The Foursquare API](https://developer.foursquare.com/) is a good source of rich, local data
+- [GeoFabrik](http://download.geofabrik.de/africa.html) has a wide range of interesting exports
+
 
