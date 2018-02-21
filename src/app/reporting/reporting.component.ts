@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
 import { UUID } from 'angular2-uuid';
 
 import { CurrentLocationService } from '../current-location.service';
@@ -18,9 +17,8 @@ export class ReportingComponent implements OnInit {
 
   constructor(
     private reportingService: ReportingService,
-    private currentLocationService: CurrentLocationService,
-    private router: Router,
-    public snackBar: MatSnackBar
+    public currentLocationService: CurrentLocationService,
+    private router: Router
   ) {
     this.report.patientId = UUID.UUID().slice(0, 16);
   }
