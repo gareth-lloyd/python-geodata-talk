@@ -25,7 +25,7 @@ pip install -r requirements.txt
 python api/manage.py migrate
 python api/manage.py shell_plus --notebook
 ```
-
+--------
 
 ## Resources
 ### Libraries
