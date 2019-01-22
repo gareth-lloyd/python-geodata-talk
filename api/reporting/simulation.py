@@ -23,7 +23,6 @@ APPROX_500_M = 0.0025
 HOSPITALS = {
     "National Hospital for Neurology and Neurosurgery":	(-0.1223623, 51.5222325),
     "The Hoxton Surgery": (-0.0867676, 51.5334946),
-    "Other": (-0.1505685, 51.5201916),
     "Cambian Churchill": (-0.1097437, 51.4971506),
     "Wimpole Dental": (-0.1480978, 51.5183824),
 }
@@ -113,4 +112,4 @@ def gather_reports_for_day_3():
     outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 80, 100, APPROX_500_M * 1.5)
 
 def gather_reports_for_day_28():
-    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 1000, 1000, APPROX_500_M * 5)
+    outbreak(OUTBREAK[0], OUTBREAK[1], Report.CHOLERA, 500, 500, APPROX_500_M * 3)

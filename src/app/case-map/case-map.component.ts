@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class CaseMapComponent implements OnInit {
   styles = LOW_CONTRAST;
-  reports: Observable<Report[]>
+  reports: Observable<Report[]>;
   lat: number;
   lng: number;
   numReports: number;
@@ -25,7 +25,7 @@ export class CaseMapComponent implements OnInit {
       this.lat = reports[0].coords.latitude;
       this.lng = reports[0].coords.longitude;
       this.numReports = reports.length;
-    })
+    });
   }
 
 }

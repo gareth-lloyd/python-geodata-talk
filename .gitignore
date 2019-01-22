@@ -119,6 +119,7 @@ ENV/
 *.launch
 .settings/
 *.sublime-workspace
+.vscode
 
 # IDE - VSCode
 .vscode/*
@@ -143,3 +144,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Archive
+api/jupyter-archive/*
+
