@@ -23,7 +23,7 @@ def plot_outbreak():
     roads = geopandas.read_file('../open-street-map-data/london-roads_shp/')
 
     # Filter the roads to just the most important ones
-    mains = roads[roads['highway'].isin(('trunk', 'primary', 'secondary', 'tertiary'))]
+    mains = roads[roads['highway'].isin(('trunk', 'primary', 'secondary', 'tertiary', 'unclassified'))]
 
     medical = geopandas.read_file('../open-street-map-data/london-hospitals_shp/')
     hospitals = medical[medical['amenity'] == 'hospital'].copy()
@@ -48,6 +48,6 @@ def plot_outbreak():
     rivers.plot(ax=axes, color='blue', alpha=0.3)
     mains.plot(ax=axes, color="black", alpha=0.2)
     non_hospital_cases.plot(
-        ax=axes, marker="o", column="diagnosis", markersize=64, alpha=0.5
+        ax=axes, marker="o", column="diagnosis", markersize=64, alpha=0.5, legend=True
     )
     pyplot.show()
